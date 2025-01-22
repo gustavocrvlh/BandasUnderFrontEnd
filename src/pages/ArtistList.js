@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { getArtists } from '../services/api';
 
 
+//getDomainName e formatValue -> devem ser globais 
+
 /*
 Tem campo na tabela do banco de dados q ao
 invés de estar vazio, ele tem um traço (-).
