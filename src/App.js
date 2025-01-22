@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import ArtistForm from './pages/ArtistForm';
 import ArtistList from './pages/ArtistList';
 import ArtistUpdate from './pages/ArtistUpdate';
-import './App.css';
+import '../src/styles/App.css';
 
 function App() {
     return (
