@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { updateArtist, getArtists } from '../services/api';
+
 import '../styles/ArtistUpdate.css';
 
 const ArtistUpdate = () => {

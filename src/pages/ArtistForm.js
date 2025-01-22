@@ -1,6 +1,23 @@
 import React, { useState } from 'react';
 import { createArtist } from '../services/api';
 
+const token = localStorage.getItem('token');
+
+fetch('http://127.0.0.1:8000/api/artists/', {
+    method: 'POST',
+    headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ artist_name: 'Novo artista' }),
+}).then(response => {
+    if (response.ok) {
+        alert('Artista adicionado');
+    } else {
+        alert('Permissão negada!');
+    }
+});
+
 const ArtistForm = () => {
     const [artist, setArtist] = useState({
         artist_name: '',
