@@ -1,15 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import ArtistForm from './components/ArtistForm';
-import ArtistList from './components/ArtistList';
+import Home from './pages/Home';
+import ArtistForm from './pages/ArtistForm';
+import ArtistList from './pages/ArtistList';
+import ArtistUpdate from './pages/ArtistUpdate';
+import './App.css';
 
 function App() {
     return (
-        <div>
-            <h1>Portal Underground BR</h1>
-            <ArtistForm />
-            <ArtistList />
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/edit-artist/" element={<ArtistUpdate />} />
+                <Route path="/add-artist" element={<ArtistForm />} />
+                <Route path="/list-artists" element={<ArtistList />} />
+            </Routes>
+        </Router>
     );
 }
 

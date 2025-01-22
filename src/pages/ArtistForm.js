@@ -28,8 +28,8 @@ const ArtistForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" name="artist_name" placeholder="Nome do Artista" value={artist.artist_name} onChange={handleChange} />
-            <input type="text" name="main_genre" placeholder="Gênero Principal" value={artist.main_genre} onChange={handleChange} />
+            <input type="text" name="artist_name" placeholder="Nome do Artista" value={artist.artist_name} onChange={handleChange} required/>
+            <input type="text" name="main_genre" placeholder="Gênero Principal" value={artist.main_genre} onChange={handleChange} required/>
             <input type="url" name="discografy" placeholder="Discografia (URL)" value={artist.discografy} onChange={handleChange} />
             <input type="text" name="city" placeholder="Cidade" value={artist.city} onChange={handleChange} />
             <input type="text" name="state" placeholder="Estado" value={artist.state} onChange={handleChange} />

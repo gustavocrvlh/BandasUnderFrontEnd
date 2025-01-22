@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+td a {
+  color: #1d72b8;
+  text-decoration: none;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: #cc0000;
+}
