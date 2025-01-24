@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createArtist } from '../../services/api';
 
-const ArtistForm = () => {
+const ManagerArtistForm = () => {
     const [artist, setArtist] = useState({
         artist_name: '',
         main_genre: '',
@@ -54,4 +54,4 @@ const ArtistForm = () => {
     );
 };
 
-export default ArtistForm;
+export default ManagerArtistForm;

@@ -9,9 +9,9 @@ import ManagerHome from '../pages/management/ManagerHome';
 import ArtistForm from '../pages/management/ManagerArtistForm';
 import ArtistUpdate from '../pages/management/ManagerArtistUpdate';
 
-const PrivateRoute = ({ element }) => {
+const PrivateRoute = ({ children }) => {
     const token = localStorage.getItem('token');
-    return token ? element : <Navigate to="/login" />;
+    return token ? children : <Navigate to="/login" />;
 };
 
 const AppRoutes = () => {

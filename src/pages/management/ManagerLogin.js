@@ -22,7 +22,7 @@ const Login = () => {
             navigate('/manager-home');
         } else {
             alert('Falha no login');
-            navigate('/login');
+            navigate(0)
         }
     };
 
