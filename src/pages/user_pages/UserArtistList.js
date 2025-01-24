@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getArtists } from '../services/api';
+import { getArtists } from '../../services/api';
 
 
 //getDomainName e formatValue -> devem ser globais 

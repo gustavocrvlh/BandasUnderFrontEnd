@@ -1,22 +1,5 @@
 import React, { useState } from 'react';
-import { createArtist } from '../services/api';
-
-const token = localStorage.getItem('token');
-
-fetch('http://127.0.0.1:8000/api/artists/', {
-    method: 'POST',
-    headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ artist_name: 'Novo artista' }),
-}).then(response => {
-    if (response.ok) {
-        alert('Artista adicionado');
-    } else {
-        alert('Permissão negada!');
-    }
-});
+import { createArtist } from '../../services/api';
 
 const ArtistForm = () => {
     const [artist, setArtist] = useState({
@@ -34,11 +17,26 @@ const ArtistForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const token = localStorage.getItem('token');
+
         try {
-            await createArtist(artist);
-            alert('Artista adicionado com sucesso!');
-            setArtist({ artist_name: '', main_genre: '', discografy: '', city: '', state: '', contact: '' });
+            const response = await fetch('http://127.0.0.1:8000/api/artists/', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(artist),
+            });
+
+            if (response.ok) {
+                alert('Artista adicionado com sucesso!');
+                setArtist({ artist_name: '', main_genre: '', discografy: '', city: '', state: '', contact: '' });
+            } else {
+                alert('Permissão negada ou erro ao adicionar artista.');
+            }
         } catch (error) {
+            alert('Erro ao conectar com o servidor.');
             console.error('Erro ao adicionar artista:', error);
         }
     };

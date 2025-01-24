@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { updateArtist, getArtists } from '../services/api';
+import { updateArtist, getArtists } from '../../services/api';
 
-import '../styles/ArtistUpdate.css';
+import '../../styles/pages_style/ArtistUpdate.css';
 
 const ArtistUpdate = () => {
     const navigate = useNavigate();

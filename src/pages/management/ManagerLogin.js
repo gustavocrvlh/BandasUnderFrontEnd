@@ -1,8 +1,12 @@
+import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         const response = await fetch('http://127.0.0.1:8000/api/token/', {
@@ -15,8 +19,10 @@ const Login = () => {
             const data = await response.json();
             localStorage.setItem('token', data.access);
             alert('Login bem-sucedido');
+            navigate('/manager-home');
         } else {
             alert('Falha no login');
+            navigate('/login');
         }
     };
 
